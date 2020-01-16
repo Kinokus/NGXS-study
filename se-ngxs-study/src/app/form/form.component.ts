@@ -8,6 +8,7 @@ import {Observable} from 'rxjs';
 import {TodoState} from '../../states/todo.state';
 import {Todo} from '../../models/todo';
 import {AddTodo, SetSelectedTodo, UpdateTodo} from '../../actions/todo.actions';
+import {WeatherService} from '../weather.service';
 
 
 @Component({
@@ -20,7 +21,13 @@ export class FormComponent implements OnInit {
   todoForm: FormGroup;
   editTodo = false;
 
-  constructor(private fb: FormBuilder, private store: Store, private route: ActivatedRoute, private router: Router) {
+  constructor(
+    private fb: FormBuilder,
+    private store: Store,
+    private route: ActivatedRoute,
+    private router: Router,
+    private weatherService: WeatherService
+  ) {
     this.createForm();
   }
 
