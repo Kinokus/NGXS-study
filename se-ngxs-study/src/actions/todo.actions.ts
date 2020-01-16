@@ -1,5 +1,7 @@
 import {Todo} from '../models/todo';
 
+
+/* action is something like as interface for  state*/
 export class AddTodo {
   static readonly type = '[Todo] Add';
 
@@ -11,9 +13,10 @@ export class GetTodos {
   static readonly type = '[Todo] Get';
 }
 
+
+
 export class UpdateTodo {
   static readonly type = '[Todo] Update';
-
   constructor(public payload: Todo, public id: number) {
   }
 }
